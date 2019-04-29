@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.7.2" method="upgrade">
+	<name>HelloWorld</name>
+	<author>pr-olga</author>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<version>1.0</version>
+	<description>List articles of two categories and  sort them</description>
+	<files folder="site">
+        <filename>index.html</filename>
+		<filename>helloworld.php</filename>
+	</files>
+	<administration>
+		<menu>HelloWorld</menu>
+		<files folder="admin">
+		    <filename>index.html</filename>
+			<filename>helloworld.php</filename>
+		</files>
+		</administration>
+</extension>
