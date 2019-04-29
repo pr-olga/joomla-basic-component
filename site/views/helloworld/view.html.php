@@ -37,6 +37,8 @@ class HelloWorldViewHelloWorld extends JViewLegacy
             return false;
         }
 
+        $this->response = $this->get('List');
+
 		// Display the view
 		parent::display($tpl);
 	}

@@ -9,7 +9,7 @@
 
 // No direct access to this file
 defined('_JEXEC') or die('Restricted access');
-
+require 'vendor/autoload.php';
 /**
  * HelloWorld Model
  *
@@ -21,6 +21,11 @@ class HelloWorldModelHelloWorld extends JModelItem
 	 * @var string message
 	 */
 	protected $message;
+
+	/**
+	 * @var string response
+	 */
+	protected $response;
 
 	/**
 	 * Get the message
@@ -47,5 +52,17 @@ class HelloWorldModelHelloWorld extends JModelItem
 		}
 
 		return $this->message;
-	}
+    }
+
+    public function getList()
+    {
+        // Create a client with a base URI
+        $client = new GuzzleHttp\Client(['base_uri' => 'http://httpbin.org']);
+        // Send a request to http://httpbin.org/ip
+        $res = $client->request('GET', 'ip');
+        $this->response = $res->getStatusCode();
+
+        return $this->response;
+
+    }
 }
