@@ -3,11 +3,13 @@
 	<name>HelloWorld</name>
 	<author>pr-olga</author>
 	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
-	<version>1.0</version>
+	<version>1.1</version>
 	<description>List articles of two categories and  sort them</description>
 	<files folder="site">
         <filename>index.html</filename>
 		<filename>helloworld.php</filename>
+        <filename>controller.php</filename>
+		<folder>views</folder>
 	</files>
 	<administration>
 		<menu>HelloWorld</menu>
