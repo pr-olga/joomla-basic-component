@@ -56,12 +56,11 @@ class HelloWorldModelHelloWorld extends JModelItem
 
     public function getList()
     {
-        // Create a client with a base URI
-        $client = new GuzzleHttp\Client(['base_uri' => 'http://httpbin.org']);
-        // Send a request to http://httpbin.org/ip
-        $res = $client->request('GET', 'ip');
-        $this->response = $res->getStatusCode();
+        $client = new \GuzzleHttp\Client();
+        $res = $client->request('GET', 'https://jobs.github.com/positions.json?description=python&location=new+york');
 
+        $resa = $res->getBody();
+        $this->response = json_decode($resa);
         return $this->response;
 
     }

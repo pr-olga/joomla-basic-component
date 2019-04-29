@@ -12,5 +12,10 @@ defined('_JEXEC') or die('Restricted access');
 ?>
 <h1><?php echo $this->msg; ?></h1>
 <pre>
-<?php echo  $this->response; ?>
+
+<?php
+foreach ($this->response as $response) {
+     echo '<a href="' . $response->company . '">' . $response->company . '</a>';
+}
+ ?>
 </pre>
