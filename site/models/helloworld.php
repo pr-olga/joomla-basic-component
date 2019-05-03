@@ -9,7 +9,7 @@
 
 // No direct access to this file
 defined('_JEXEC') or die('Restricted access');
-require 'vendor/autoload.php';
+require __DIR__.'\..\vendor\autoload.php';
 /**
  * HelloWorld Model
  *

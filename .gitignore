@@ -1,2 +1,2 @@
-site/models/vendor
-site/models/composer.phar
+site/vendor
+site/composer.phar

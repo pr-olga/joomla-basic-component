@@ -11,17 +11,12 @@
         <filename>controller.php</filename>
 		<folder>views</folder>
 		<folder>models</folder>
+		<folder>vendor</folder>
+        <filename>composer.phar</filename>
+        <filename>composer.json</filename>
+        <filename>composer.lock</filename>
 	</files>
-        <files folder="site/models">
-            <folder>vendor</folder>
-            <filename>composer.phar</filename>
-            <filename>composer.json</filename>
-            <filename>composer.lock</filename>
-        </files>
-        <files folder="site/models/vendor">
-            <files>autoload.php</files>
-        </files>
-	<administration>
+    	<administration>
 		<menu>HelloWorld</menu>
 		<files folder="admin">
 		    <filename>index.html</filename>
