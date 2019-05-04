@@ -3,7 +3,7 @@
 	<name>HelloWorld</name>
 	<author>pr-olga</author>
 	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
-	<version>1.5</version>
+	<version>1.6</version>
 	<description>List articles of two categories and  sort them</description>
 	<install> <!-- Runs on install -->
 		<sql>
@@ -41,8 +41,10 @@
 			<files folder="admin">
 				<filename>index.html</filename>
 				<filename>helloworld.php</filename>
+				<!-- SQL files section -->
 				<folder>sql</folder>
+				<!-- tables files section -->
+				<folder>tables</folder>
 			</files>
-			<!-- SQL files section -->
 		</administration>
 </extension>
