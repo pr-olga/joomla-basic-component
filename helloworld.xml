@@ -5,6 +5,7 @@
 	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
 	<version>1.7</version>
 	<description>List articles of two categories and  sort them</description>
+	<scriptfile>script.php</scriptfile>
 	<install> <!-- Runs on install -->
 		<sql>
 			<file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
@@ -41,6 +42,7 @@
 			<files folder="admin">
 				<filename>index.html</filename>
 				<filename>helloworld.php</filename>
+
 				<!-- SQL files section -->
 				<folder>sql</folder>
 				<!-- tables files section -->

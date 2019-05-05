@@ -9,7 +9,7 @@ CREATE TABLE `#__helloworld` (
 	ENGINE =MyISAM
 	AUTO_INCREMENT =0
 	DEFAULT CHARSET =utf8;
-
+/*
 INSERT INTO `#__helloworld` (`greeting`) VALUES
 ('Hello World!'),
-('GoodBye World!');
+('GoodBye World!'); */
