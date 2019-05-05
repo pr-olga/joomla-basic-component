@@ -16,20 +16,19 @@ class com_helloWorldInstallerScript
 {
     public function postflight($type, $parent)
     {
-
         require __DIR__.'\site\vendor\autoload.php';
         $db = JFactory::getDBO();
 
-$client = new \GuzzleHttp\Client();
-$res = $client->request('GET', 'https://jobs.github.com/positions.json?description=python&location=new+york');
+        $client = new \GuzzleHttp\Client();
+        $res = $client->request('GET', 'https://jobs.github.com/positions.json?description=python&location=new+york');
 
-$resa = $res->getBody();
-$response = json_decode($resa);
+        $resa = $res->getBody();
+        $response = json_decode($resa);
 
 
-foreach ($response as $res) {
-            $db->setQuery('INSERT INTO #__helloworld  (`greeting`) VALUES ("'. $res->company .'")');
-            $db->execute();
+        foreach ($response as $res) {
+                    $db->setQuery('INSERT INTO #__helloworld  (`greeting`) VALUES ("'. $res->company .'")');
+                    $db->execute();
         }
    }
 }
