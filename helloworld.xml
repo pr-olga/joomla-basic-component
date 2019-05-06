@@ -50,6 +50,7 @@
 				<!-- models files section -->
 				<folder>models</folder>
 				<folder>views</folder>
+				<folder>controllers</folder>
 			</files>
 		</administration>
 </extension>

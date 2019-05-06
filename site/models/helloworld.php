@@ -60,7 +60,7 @@ class HelloWorldModelHelloWorld extends JModelItem
 
 		if (!isset($this->messages[$id]))
 		{
-			// Request the selected id
+			// Request the selected id, i.e. found the current id
 			$jinput = JFactory::getApplication()->input;
 			$id     = $jinput->get('id', 1, 'INT');
 
