@@ -28,12 +28,12 @@ class HelloWorldModelHelloWorld extends JModelForm
 	 *
 	 * @since   1.6
 	 */
-	 public function getTable($type = 'HelloWorld', $prefix = 'HelloWorldTable', $config = array())
+/* 	 public function getTable($type = 'HelloWorld', $prefix = 'HelloWorldTable', $config = array())
 	{
 		return JTable::getInstance($type, $prefix, $config);
 	}
 
-	public function getItem()
+ */	public function getItem()
 	{
 		$input = JFactory::getApplication()->input;
 		$id     = $input->get('id', 0, 'int');
@@ -58,7 +58,7 @@ class HelloWorldModelHelloWorld extends JModelForm
 			'com_helloworld.helloworld',
 			'helloworld',
 			array(
-				'control' => 'hwform',
+				'control' => 'jform',
 				'load_data' => true
 			)
 		);
@@ -92,5 +92,12 @@ class HelloWorldModelHelloWorld extends JModelForm
 		}
 
 		return $data;
+	}
+
+	public function save ($data)
+    {
+		$table = $this->getTable('helloworld', 'helloworldTable');
+		$table->bind($data);
+		$table->store();
 	}
 }

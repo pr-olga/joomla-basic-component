@@ -25,5 +25,19 @@ class HelloWorldControllerHelloWorld extends JControllerLegacy
         }
         $this->setRedirect(JRoute::_("index.php?option=com_helloworld&view=helloworld&layout=edit&id=$id", false));
     }
+
+    public function save ()
+    {
+        $input = JFactory::getApplication()->input;
+        $data     = $input->get('jform', array(), 'array');
+        $model = $this->getModel();
+        $model->save($data);
+        $this->setRedirect(JRoute::_("index.php?option=com_helloworld", false), "Record saved");
+    }
+
+    public function cancel ()
+    {
+        $this->setRedirect(JRoute::_("index.php?option=com_helloworld", false), "Operation canceled");
+    }
 }
 
