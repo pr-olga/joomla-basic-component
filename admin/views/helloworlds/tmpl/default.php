@@ -38,23 +38,21 @@ defined('_JEXEC') or die('Restricted Access');
 		</tfoot>
 		<tbody>
 			<?php if (!empty($this->items)) : ?>
-                <?php foreach ($this->items as $i => $row) :
-                    $link = JRoute::_('index.php?option=com_helloworld&task=helloworld.edit&id=' . $row->id);
-                    ?>
-
+				<?php foreach ($this->items as $i => $row) :
+					$link = JRoute::_('index.php?option=com_helloworld&task=helloworld.edit&id=' . $row->id);
+				?>
 					<tr>
-						<td>
-							<?php echo $this->pagination->getRowOffset($i); ?>
-						</td>
+						<td><?php echo $this->pagination->getRowOffset($i); ?></td>
 						<td>
 							<?php echo JHtml::_('grid.id', $i, $row->id); ?>
 						</td>
 						<td>
-                        <a href="<?php echo $link; ?>" title="<?php echo JText::_('COM_HELLOWORLD_EDIT_HELLOWORLD'); ?>">
-							<?php echo $row->greeting; ?>
+							<a href="<?php echo $link; ?>" title="<?php echo JText::_('COM_HELLOWORLD_EDIT_HELLOWORLD'); ?>">
+								<?php echo $row->greeting; ?>
+							</a>
 						</td>
 						<td align="center">
-							<?php echo $row->published; ?>
+							<?php echo JHtml::_('jgrid.published', $row->published, $i, 'helloworlds.', true, 'cb'); ?>
 						</td>
 						<td align="center">
 							<?php echo $row->id; ?>
@@ -63,8 +61,8 @@ defined('_JEXEC') or die('Restricted Access');
 				<?php endforeach; ?>
 			<?php endif; ?>
 		</tbody>
-    </table>
-    <input type="hidden" name="task" value=""/>
+	</table>
+	<input type="hidden" name="task" value=""/>
 	<input type="hidden" name="boxchecked" value="0"/>
 	<?php echo JHtml::_('form.token'); ?>
 </form>

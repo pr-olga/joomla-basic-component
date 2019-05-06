@@ -17,8 +17,8 @@ class HelloWorldControllerHelloWorld extends JControllerLegacy
 {
     public function edit ()
     {
-        $jinput = JFactory::getApplication()->input;
-        $id     = $jinput->get('id', 0, 'INT');
+        $input = JFactory::getApplication()->input;
+        $id     = $input->get('id', 0, 'int');
         if ($id == 0) {
             $ids = $input->get('cid', array(), 'array');
             $id = $ids[0];
