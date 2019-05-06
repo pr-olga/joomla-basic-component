@@ -38,7 +38,24 @@ class HelloWorldViewHelloWorlds extends JViewLegacy
 			return false;
 		}
 
+		// Set the toolbar
+		$this->addToolBar();
+
 		// Display the template
 		parent::display($tpl);
+    }
+
+    	/**
+	 * Add the page title and toolbar.
+	 *
+	 * @return  void
+	 *
+	 * @since   1.6
+	 */
+	protected function addToolBar()
+	{
+		JToolbarHelper::title(JText::_('COM_HELLOWORLD_MANAGER_HELLOWORLDS'));
+		JToolbarHelper::editList('helloworld.edit');
+		JToolbarHelper::deleteList('', 'helloworlds.delete');
 	}
 }
