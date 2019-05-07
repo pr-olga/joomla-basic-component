@@ -9,24 +9,19 @@
 
 // No direct access to this file
 defined('_JEXEC') or die('Restricted access');
-require __DIR__.'\..\vendor\autoload.php';
+
 /**
  * HelloWorld Model
  *
  * @since  0.0.1
  */
 
-class HelloWorldModelHelloWorld extends JModelItem
+class HelloWorldModelHelloWorld extends JModelList
 {
 	/**
 	 * @var string messages
 	 */
 	protected $messages;
-
-	/**
-	 * @var string response
-	 */
-	protected $response;
 
 	/**
 	 * Method to get a table object, load it if necessary.
@@ -77,14 +72,12 @@ class HelloWorldModelHelloWorld extends JModelItem
 		return $this->messages[$id];
 	}
 
-    public function getList()
+	protected function getListQuery()
     {
-        $client = new \GuzzleHttp\Client();
-        $res = $client->request('GET', 'https://jobs.github.com/positions.json?description=python&location=new+york');
+        $db = JFactory::getDbo();
+        $query = $db->getQuery(true);
+		$query->select('greeting')->from($db->quoteName('#__helloworld'));
 
-        $resa = $res->getBody();
-        $this->response = json_decode($resa);
-        return $this->response;
-
+		return $query;
     }
 }

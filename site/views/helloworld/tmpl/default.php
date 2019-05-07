@@ -11,11 +11,9 @@
 defined('_JEXEC') or die('Restricted access');
 ?>
 <h1><?php echo $this->msg; ?></h1>
-<pre>
-
-<?php
-foreach ($this->response as $response) {
-     echo '<a href="' . $response->company . '">' . $response->company . '</a>';
-}
- ?>
-</pre>
+<h2>List of Locations</h2>
+<ul>
+     <?php foreach($this->query as $titles) :  ?>
+     <li><?php echo $titles->greeting; ?></li>
+     <?php endforeach; ?>
+</ul>
