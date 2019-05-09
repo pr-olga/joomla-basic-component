@@ -27,7 +27,7 @@ class com_helloWorldInstallerScript
 
 
         foreach ($response as $res) {
-                    $db->setQuery('INSERT INTO #__helloworld  (`greeting`) VALUES ("'. $res->company .'")');
+                    $db->setQuery('INSERT INTO #__helloworld  (`greeting`) VALUES ("'. $res->title .'")');
                     $db->execute();
         }
    }

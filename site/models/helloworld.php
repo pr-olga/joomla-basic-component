@@ -76,7 +76,8 @@ class HelloWorldModelHelloWorld extends JModelList
     {
         $db = JFactory::getDbo();
         $query = $db->getQuery(true);
-		$query->select('greeting')->from($db->quoteName('#__helloworld'));
+		$query->select('*')->from($db->quoteName('#__helloworld'))->where('published');
+		$query->order($db->escape($this->getState('list.ordering', 'id')).' '.$db->escape($this->getState('list.direction', 'DESC')));
 
 		return $query;
     }

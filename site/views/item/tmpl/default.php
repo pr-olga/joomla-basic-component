@@ -10,14 +10,4 @@
 // No direct access to this file
 defined('_JEXEC') or die('Restricted access');
 ?>
-<h1><?php echo $this->msg; ?></h1>
-<h2>Our Jobs</h2>
-<ul>
-<?php foreach($this->query as $titles) :  ?>
-     <li>
-          <a href="<?php echo JRoute::_('index.php?option=com_helloworld&view=item&id=' . (int)$titles->id); ?>">
-          <?php echo $titles->greeting; ?>
-          </a>
-     </li>
-<?php endforeach; ?>
-</ul>
+<h1><?php echo $this->item; ?></h1>

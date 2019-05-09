@@ -2,14 +2,11 @@ DROP TABLE IF EXISTS `#__helloworld`;
 
 CREATE TABLE `#__helloworld` (
 	`id`       INT(11)     NOT NULL AUTO_INCREMENT,
-	`greeting` VARCHAR(25) NOT NULL,
+	`greeting` VARCHAR(255) NOT NULL,
+	`alias`  VARCHAR(40)  NOT NULL DEFAULT '',
 	`published` tinyint(4) NOT NULL DEFAULT '1',
 	PRIMARY KEY (`id`)
 )
 	ENGINE =MyISAM
 	AUTO_INCREMENT =0
 	DEFAULT CHARSET =utf8;
-/*
-INSERT INTO `#__helloworld` (`greeting`) VALUES
-('Hello World!'),
-('GoodBye World!'); */
