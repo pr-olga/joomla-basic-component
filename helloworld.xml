@@ -25,6 +25,7 @@
         <filename>index.html</filename>
 		<filename>helloworld.php</filename>
         <filename>controller.php</filename>
+		<filename>router.php</filename>
 		<folder>views</folder>
 		<folder>models</folder>
 		<folder>vendor</folder>
