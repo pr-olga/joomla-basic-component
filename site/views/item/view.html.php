@@ -17,18 +17,23 @@ defined('_JEXEC') or die('Restricted access');
  */
 class HelloWorldViewItem extends JViewLegacy
 {
-	/**
-	 * Display the Hello World Item view
-	 * @param   string  $tpl  The name of the template file to parse; automatically searches through the template paths.
-	 *
-	 * @return  void
-	 */
-	function display($tpl = null)
-	{
-        // Assign data to the view
-        $this->item =  $this->get('Item');
+    /**
+     * Display the Hello World Item view
+     * @param   string  $tpl  The name of the template file to parse; automatically searches through the template paths.
+     *
+     * @return  void
+     */
+    public function display($tpl = null)
+    {
+		$document = JFactory::getDocument();
 
-		// Display the view
-		parent::display($tpl);
-	}
+        // Assign data to the view
+        $this->item = $this->get('Item');
+
+        // Set Mata Data
+        $this->document->setMetadata('description', $this->item["metadescription"]);
+
+        // Display the view
+        parent::display($tpl);
+    }
 }

@@ -10,4 +10,4 @@
 // No direct access to this file
 defined('_JEXEC') or die('Restricted access');
 ?>
-<h1><?php echo $this->item; ?></h1>
+<h1><?php echo $this->item["message"]; ?></h1>

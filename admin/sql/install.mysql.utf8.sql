@@ -4,6 +4,7 @@ CREATE TABLE `#__helloworld` (
 	`id`       INT(11)     NOT NULL AUTO_INCREMENT,
 	`greeting` VARCHAR(255) NOT NULL,
 	`alias`  VARCHAR(255)  NOT NULL DEFAULT '',
+	`metadescription`  TEXT(255)  NOT NULL DEFAULT '',
 	`published` tinyint(4) NOT NULL DEFAULT '1',
 	PRIMARY KEY (`id`)
 )

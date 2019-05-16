@@ -58,7 +58,12 @@ class HelloWorldModelItem extends JModelItem
         $table->load($id);
 
         // Assign the item
-        $this->item[$id] = $table->greeting;
+		$this->item[$id] =
+		array (
+			"message" => $table->greeting,
+			"metadescription" => $table->metadescription
+		);
+
 
         return $this->item[$id];
     }
