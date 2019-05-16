@@ -3,7 +3,7 @@
 	<name>HelloWorld</name>
 	<author>pr-olga</author>
 	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
-	<version>1.8</version>
+	<version>1.9</version>
 	<description>List articles of two categories and  sort them</description>
 	<scriptfile>script.php</scriptfile>
 	<install> <!-- Runs on install -->
@@ -26,6 +26,7 @@
 		<filename>helloworld.php</filename>
         <filename>controller.php</filename>
 		<filename>router.php</filename>
+		<folder>assets</folder>
 		<folder>views</folder>
 		<folder>models</folder>
 		<folder>vendor</folder>

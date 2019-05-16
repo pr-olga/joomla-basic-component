@@ -17,5 +17,9 @@ $controller = JControllerLegacy::getInstance('HelloWorld');
 $input = JFactory::getApplication()->input;
 $controller->execute($input->getCmd('task'));
 
+// Add Style
+$document = JFactory::getDocument();
+$document->addStyleSheet(Juri::base() . 'components/com_helloworld/assets/helloworld.css');
+
 // Redirect if set by the controller
 $controller->redirect();
