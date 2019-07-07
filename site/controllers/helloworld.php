@@ -15,25 +15,39 @@ defined('_JEXEC') or die('Restricted access');
  */
 class HelloWorldControllerHelloWorld extends JControllerLegacy
 {
-    function __construct()
-	{
-		parent::__construct();
-	}
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
+    /**
+     * Method to get a model object, loading it if required.
+     *
+     * @param    string    $name    The model name. Optional.
+     * @param    string    $prefix    The class prefix. Optional.
+     * @param    array    $config    Configuration array for model. Optional.
+     *
+     * @return    object    The model.
+     * @since    1.5
+     */
+    public function &getModel($name = 'helloworld', $prefix = '', $config = array('ignore_request' => true))
+    {
+        $model = parent::getModel($name, $prefix, $config);
+
+        return $model;
+    }
 
 	/**
-	 * Method to get a model object, loading it if required.
+	 * Get the json view
 	 *
-	 * @param	string	$name	The model name. Optional.
-	 * @param	string	$prefix	The class prefix. Optional.
-	 * @param	array	$config	Configuration array for model. Optional.
-	 *
-	 * @return	object	The model.
-	 * @since	1.5
+	 * @return void
 	 */
-	public function &getModel($name = 'helloworld', $prefix = '', $config = array('ignore_request' => true))
-	{
-		$model = parent::getModel($name, $prefix, $config);
-
-		return $model;
-	}
+    public function typeaheadsearchalias()
+    {
+        if (!JSession::checkToken('get')) {
+            echo new JResponseJson(null, JText::_('JINVALID_TOKEN'), true);
+        } else {
+            parent::display();
+        }
+    }
 }
