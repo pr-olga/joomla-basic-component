@@ -9,8 +9,10 @@
 
 // No direct access to this file
 defined('_JEXEC') or die('Restricted access');
+
 $document = JFactory::getDocument();
 JHtml::_('bootstrap.framework');
+$document->addScript("components/com_jobboerse/assets/bootstrap3-typeahead.min.js");
 $document->addScript("components/com_jobboerse/assets/search.js");
 ?>
 <h1><?php echo $this->msg; ?></h1>
