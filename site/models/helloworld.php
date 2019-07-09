@@ -72,6 +72,11 @@ class HelloWorldModelHelloWorld extends JModelList
 		return $this->messages[$id];
 	}
 
+	public function getAliasSearchResults ()
+	{
+
+	}
+
 	protected function getListQuery()
     {
         $db = JFactory::getDbo();
@@ -80,5 +85,5 @@ class HelloWorldModelHelloWorld extends JModelList
 		$query->order($db->escape($this->getState('list.ordering', 'id')).' '.$db->escape($this->getState('list.direction', 'DESC')));
 
 		return $query;
-    }
+	}
 }
