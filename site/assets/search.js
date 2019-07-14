@@ -12,7 +12,7 @@ jQuery(document).ready(function() {
         method: "POST",
         dataType: 'JSON',
         success: function(data2) {
-          // console.log(data2);
+           console.log(data2);
           return process(data2);
         }
       });

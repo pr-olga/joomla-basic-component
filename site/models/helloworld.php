@@ -72,9 +72,27 @@ class HelloWorldModelHelloWorld extends JModelList
 		return $this->messages[$id];
 	}
 
-	public function getAliasSearchResults ()
+	public function getAliasSearchResults ($alias)
 	{
+		try
+        {
+            $db = JFactory::getDbo();
+            $db->setQuery(
+                "SELECT DISTINCT greeting FROM #__helloworld WHERE alias LIKE '%" . $alias . "%'");
+            $res = $db->loadObjectList();
+            $results = array();
+            foreach ($res as $row) {
+                $results[] = $row->greeting;
+            }
+            return json_encode($results);
 
+        } catch (Exception $e) {
+            $msg = $e->getMessage();
+            JFactory::getApplication()->enqueueMessage($msg, 'error');
+            $results = null;
+        }
+
+        return $results;
 	}
 
 	protected function getListQuery()
