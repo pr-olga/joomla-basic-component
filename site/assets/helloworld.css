@@ -1,3 +1,17 @@
-ul {
+.search-area__element {
+    display: inline-block;
+}
+
+#alias_search{
+    margin-bottom: 0;
+}
+
+.job-list {
+    margin-top: 20px;
+    margin-left: 0;
     list-style: none;
+}
+
+.job-list__item {
+padding-top: 10px;
 }
